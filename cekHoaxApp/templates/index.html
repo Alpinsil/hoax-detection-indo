@@ -1,0 +1,122 @@
+{% extends 'view.html' %}
+{% load static %}
+
+{% block content %}
+<section id="what-we-do" class="what-we-do mt-5">
+    <div class="container">
+        <div class="section-title">
+            <h2>Sistem Pedeteksi Berita Hoax</h2>
+            <p>Dari Netizen untuk Netizen</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 d-flex align-items">
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                    <h4><a href="#anhoax">Apa itu ANHOAX?</a></h4>
+                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items mt-4 mt-md-0">
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bx-file"></i></div>
+                    <h4><a href="#deteksi">Mulai Deteksi</a></h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items mt-4 mt-lg-0">
+                <div class="icon-box">
+                    <div class="icon"><i class="bx bx-tachometer"></i></div>
+                    <h4><a href="#about">Tentang Kami</a></h4>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End What We Do Section -->
+
+<!-- ======= About Section ======= -->
+<section id="anhoax" class="about mt-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="{% static 'img/bingung.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+                <h3 class="mb-5">Apa itu ANHOAX?</h3>
+                <p>
+                    <strong>ANHOX</strong>, merupakan singkatan dari "Anti Hoax" yaitu sistem informasi berbasis website yang dirancang dan dibangun dengan menggunakan Artificial Intelligence sebagai pendeteksi hoax yang akurat. <strong>ANHOX</strong> menawarkan kemudahan dan penerimaan dalam penggunaan. Kami mengajak para pembaca dan pengguna internet untuk mewujudkan internet tanpa hoax. Dengan adanya Website ini, netizen dapat terfasilitasi untuk dengan cerdas memilih berita dan konten yang terdapat di internet.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="deteksi" class="contact section-bg mt-5">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Mulai Deteksi</h2>
+        </div>
+
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-12">
+                <div class="info-wrap">
+                    <h5 class="mb-5 text-center">Masukan Berita atau Konten Anda</h5>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <form action="{% url 'scanText' %}" method="post" id="judul_form" role="form">
+                                    {% csrf_token %}
+                                    <input type="text" name="judul" class="form-control" placeholder="Masukan Berita" required>
+                                    <div class="mx-auto mt-3" style="width:150px">
+                                        <input type="submit" class="btn btn-warning rounded-3" placeholder="Scan"/>
+                                    </div>
+                                </form>
+                            </div>
+                            {% comment %} <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <form action="{% url 'hoaxNarasi' %}" method="post" id="narasi_form" role="form">
+                                    {% csrf_token %}
+                                    <input type="text" class="form-control" name="narasi" placeholder="Narasi Berita" required>  
+                                    <div class="mx-auto mt-3" style="width:150px">
+                                        <input type="submit" class="btn btn-warning rounded-3" placeholder="Scan"/>
+                                    </div>
+                                </form>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about mt-5 mb-5">
+    <div class="container">
+        <div class="mx-auto mt-3" >
+            <h3 class="mb-5">Tentang Kami</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 pt-4 pt-lg-0">
+                <p>
+                    Kami adalah sekelompok mahasiswa yang mengerjakan Project Website Pendeteksi Hoax sebagai syarat untuk memenuhi Tugas Akhir Studi Independent yang kami laksanakan di Orbit Future Academy.
+                </p>
+                <p>
+                    Terimakasih Orbit Future Academy
+                </p>
+                <p>
+                    Cc : Kelompok 6 Watson                
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'img/cie.png' %}" class="img-fluid" alt="">
+            </div>
+        </div>
+
+    </div>
+</section><!-- End About Section -->
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'view.html' %}
+{% load static %}
+
+{% block content %}
+<section id="what-we-do" class="what-we-do mt-5">
+    <div class="container">
+        <div class="section-title">
+            <p>Hasilnya adalah</p>
+            <h2 class="mt-5">
+                {% if result %}
+                <h5 style="text-align:center"><strong>Prediction : {{ result }}</strong></h5>
+                {% endif %}
+            </h2>
+        </div>
+    </div>
+</section>
+{% endblock %}
